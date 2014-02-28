@@ -3,6 +3,9 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
+import OverView.HexGrid;
+import OverView.HexNode;
+
 
 public class TestGridRenderer extends JPanel {
 	HexGrid grid;
