@@ -32,9 +32,17 @@ public class Space extends HexNode implements Carries,  BattleField
 	}
 
 	@Override
-	public ArrayList<Unit> getUnits() {
+	public ArrayList<Unit> getUnits() 
+	{
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Space getLocation() 
+	{
+		// TODO Auto-generated method stub
+		return this;
 	}
 
 	

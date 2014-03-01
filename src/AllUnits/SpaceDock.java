@@ -2,6 +2,7 @@ package AllUnits;
 import java.util.ArrayList;
 
 import Interfaces.Carries;
+import OverView.Space;
 import SpaceObjects.*;
 
 
@@ -27,5 +28,11 @@ public class SpaceDock extends LandUnit implements Carries
 	public ArrayList<Unit> getUnits() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Space getLocation() {
+		// TODO Auto-generated method stub
+		return unitAttachedTo.getLocation();
 	}
 }

@@ -10,9 +10,9 @@ public abstract class Unit
 {
 	public int power;
 	public BufferedImage sprite;
-	public boolean canFight(Carries c)
+	public boolean canFight(BattleField b)
 	{
-		return true;
+		return false;
 	}
 	public Player getPlayer(Game g)
 	{

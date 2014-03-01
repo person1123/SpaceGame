@@ -1,5 +1,6 @@
 package SpaceObjects;
 
-public class AstroidField {
+public class AstroidField extends SpaceObject
+{
 
 }

@@ -26,5 +26,10 @@ public class WarSun extends SpaceUnit implements Carries
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public Space getLocation() {
+		// TODO Auto-generated method stub
+		return mapLocation;
+	}
 
 }

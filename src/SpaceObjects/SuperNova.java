@@ -1,5 +1,6 @@
 package SpaceObjects;
 
-public class SuperNova {
+public class SuperNova extends SpaceObject
+{
 
 }

@@ -1,5 +1,6 @@
 package AllUnits;
 import Interfaces.*;
+import OverView.Space;
 import SpaceObjects.*;
 
 
@@ -12,5 +13,9 @@ public class Fighter extends Unit
 		mapLocation= (Carries)(builtAt.mapLocation);
 		power=9;
 		lives=1;
+	}
+	public boolean canFight(BattleField b)
+	{
+		return b instanceof Space && b==mapLocation.getLocation();
 	}
 }

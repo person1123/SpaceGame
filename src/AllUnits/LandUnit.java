@@ -1,5 +1,7 @@
 package AllUnits;
+import Interfaces.BattleField;
 import Interfaces.Carries;
+import SpaceObjects.Planet;
 
 
 public  abstract class LandUnit extends Unit
@@ -16,5 +18,9 @@ public  abstract class LandUnit extends Unit
 	public boolean inSpace()
 	{
 		return false;
+	}
+	public boolean canFight(BattleField b)
+	{
+		return b instanceof Planet && b==unitAttachedTo;
 	}
 }

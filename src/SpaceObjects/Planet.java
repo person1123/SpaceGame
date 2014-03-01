@@ -11,7 +11,7 @@ import OverView.*;
 
 public class Planet extends SpaceObject implements Carries, BattleField
 {
-
+	public Player controlledBy;
 	public Planet(Space exists)
 	{
 		mapLocation=exists;
@@ -39,6 +39,11 @@ public class Planet extends SpaceObject implements Carries, BattleField
 	public ArrayList<Unit> getUnits() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public Space getLocation() {
+		// TODO Auto-generated method stub
+		return mapLocation;
 	}
 
 	
