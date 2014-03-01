@@ -2,6 +2,7 @@ package OverView;
 import java.util.ArrayList;
 
 import AllUnits.SpaceUnit;
+import AllUnits.Unit;
 import Interfaces.BattleField;
 import Interfaces.Carries;
 import SpaceObjects.SpaceObject;
@@ -9,7 +10,8 @@ import SpaceObjects.SpaceObject;
 
 public class Space extends HexNode implements Carries,  BattleField
 {
-	public Space(int num, HexGrid grd) {
+	public Space(int num, HexGrid grd) 
+	{
 		super(num, grd);
 		// TODO Auto-generated constructor stub
 	}
@@ -27,6 +29,12 @@ public class Space extends HexNode implements Carries,  BattleField
 	{
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public ArrayList<Unit> getUnits() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

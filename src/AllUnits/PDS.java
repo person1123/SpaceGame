@@ -9,7 +9,6 @@ public class PDS extends LandUnit
 	public PDS(Planet builtAt)
 	{
 		power=6;
-		cost=4;
 		unitAttachedTo=builtAt;	
 		
 	}

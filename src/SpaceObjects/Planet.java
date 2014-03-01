@@ -1,6 +1,10 @@
 package SpaceObjects;
+import java.util.ArrayList;
+
 import AllUnits.LandUnit;
 import AllUnits.PDS;
+import AllUnits.SpaceDock;
+import AllUnits.Unit;
 import Interfaces.*;
 import OverView.*;
 
@@ -18,8 +22,10 @@ public class Planet extends SpaceObject implements Carries, BattleField
 		if(type==LandUnit.class) {
 			return Integer.MAX_VALUE;
 		} else if(type==PDS.class) {
-			
+			return 2;
 		}
+		else if(type==SpaceDock.class)
+			return 1;
 		
 		// TODO Auto-generated method stub
 		return 0;
@@ -28,6 +34,11 @@ public class Planet extends SpaceObject implements Carries, BattleField
 	public void battle(Game g) {
 		// TODO Auto-generated method stub
 		
+	}
+	@Override
+	public ArrayList<Unit> getUnits() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

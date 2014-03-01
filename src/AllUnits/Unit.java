@@ -9,7 +9,6 @@ import OverView.*;
 public abstract class Unit
 {
 	public int power;
-	public int cost;
 	public BufferedImage sprite;
 	public boolean canFight(Carries c)
 	{

@@ -10,6 +10,5 @@ public class Destroyer extends SpaceUnit
 		movement=2;
 		power=9;
 		lives=1;
-		cost=1;
 	}
 }
