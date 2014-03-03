@@ -2,6 +2,9 @@ package OverView;
 import java.util.ArrayList;
 
 import AllUnits.*;
+import GameCards.ActionCard;
+import GameCards.SecretObjective;
+import GameCards.StrategyCard;
 import Interfaces.*;
 import SpaceObjects.*;
 public class Player
@@ -13,7 +16,9 @@ public class Player
 	public ArrayList<ActionCard> actionCards;
 	public SecretObjective secretObjectiveCard;
 	public StrategyCard strategy;
-	public boolean inFight(BattleField b)
+	public int points;
+	public boolean passed;
+	public boolean inFight(BattleField b)//possibly make this a has sunits in method
 	{
 		for(Unit u: units)
 			if(u.canFight(b))
@@ -29,4 +34,12 @@ public class Player
 		return inFight;
 	}
 	//public boolean canPopShot(Space s)
+	public void chooseStrategy()
+	{
+		
+	}
+	public void actionPhase()
+	{
+		
+	}
 }

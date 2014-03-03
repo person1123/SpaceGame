@@ -1,4 +1,4 @@
-package OverView;
+package GameCards;
 
 public class ObjectiveCard 
 {
