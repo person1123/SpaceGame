@@ -13,11 +13,16 @@ public class TestGridRenderer extends JPanel {
 	int fc = 0;
 	
 	public TestGridRenderer() {
-		grid = new HexGrid(3);
+		grid = new HexGrid(4);
 		
-		for(int i=0;i<grid.nodes.length;i++) {
-			grid.nodes[i] = new HexNode(i,grid);
+		int ct = 0;
+		for(int i=-3;i<3;i++) {
+			for(int j=-3;j<3;j++) {
+				grid.nodes[i+3][j+3] = new HexNode(i,j,grid);
+				ct++;
+			}
 		}
+		System.out.println(ct);
 		
 		Thread t = new Thread(new Runnable(){
 
@@ -46,22 +51,24 @@ public class TestGridRenderer extends JPanel {
 		
 		int target = (fc/100)%grid.nodes.length;
 		
-		HexNode[] adjacents = grid.nodes[target].adjacentNodes();
+		HexNode[] adjacents = grid.nodes[target][target].adjacentNodes();
 		
 		for(int i=0;i<grid.nodes.length;i++) {
-			g.setColor(new Color(255,150,255));
-			for(int j=0;j<adjacents.length;j++) {
-				if(grid.nodes[i]==adjacents[j]) {
-					g.setColor(new Color(255,0,0));
+			for(int k=0;k<grid.nodes[i].length;k++) {
+				g.setColor(new Color(255,150,255));
+				for(int j=0;j<adjacents.length;j++) {
+					if(grid.nodes[i][k]==adjacents[j]) {
+						g.setColor(new Color(255,0,0));
+					}
 				}
+				
+				if(target==i && target==k) {
+					g.setColor(new Color(255,255,0));
+					System.out.println("current spot: "+i);
+				}
+				
+				grid.nodes[i][k].draw(g);
 			}
-			
-			if(target==i) {
-				g.setColor(new Color(255,255,0));
-				System.out.println("current spot: "+i);
-			}
-			
-			grid.nodes[i].draw(g);
 		}
 	}
 	

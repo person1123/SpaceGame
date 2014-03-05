@@ -2,14 +2,23 @@ package OverView;
 
 public class HexGrid {
 
-	public HexNode[] nodes;
+	public HexNode[][] nodes;
+	int shells;
 	
-	public HexGrid(int shells) {
-		nodes = new HexNode[nodesUpToShell(shells)];
+	public HexGrid(int sh) {
+		shells = sh;
+		nodes = new HexNode[2*(shells-1)][2*(shells-1)];
+		
+//		System.out.println(nodesUpToShell(shells));
 	}
 
-	public HexNode node(int shell, int circ) {
-		//mod circ so it wraps wheee
+	public HexNode node(int q, int r) {
+		if(q+shells-1<0 || q+shells-1>nodes.length
+				|| r+shells-1<0 || r+shells-1>nodes[0].length)
+			return null;
+		System.out.println("q: "+q+" r: "+r);
+		return nodes[q+shells-1][r+shells-1];
+		/*//mod circ so it wraps wheee
 		
 		int loc = nodesUpToShell(shell);
 		
@@ -23,7 +32,7 @@ public class HexGrid {
 		
 		if(loc<nodes.length)
 			return nodes[loc];
-		return null;
+		return null;*/
 	}
 	
 	public int nodesUpToShell(int shell) {
