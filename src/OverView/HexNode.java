@@ -46,4 +46,20 @@ public class HexNode {
 		
 		g.fillOval(x-25,y-25,50,50);
 	}
+	
+	public int y() {
+		return -q-r;
+	}
+	
+	public double hexDist(HexNode o) {
+		return (Math.abs(q-o.q)+Math.abs(r-o.r)+Math.abs(y()-o.y()))/2;
+	}
+	
+	public HexNode rotatedRight() {
+		return grid.node(-r, -y());
+	}
+	
+	public HexNode rotatedLeft() {
+		return grid.node(-y(), -q);
+	}
 }

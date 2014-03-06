@@ -35,6 +35,21 @@ public class HexGrid {
 		return null;*/
 	}
 	
+	public HexNode[] ring(int rad) {
+		HexNode[] results = new HexNode[6*rad];
+		
+		HexNode h = node(rad,0);
+		
+		int ct = 0;
+		
+		for(int i=0;i<6;i++) {
+			for(int j=0;j<rad;j++) {
+				results[ct] = h;
+				h = h.adjacentNodes()[i];
+			}
+		}
+	}
+	
 	public int nodesUpToShell(int shell) {
 		int spaces = 0;
 		for(int i=0;i<shell;i++) {
