@@ -35,7 +35,15 @@ public class HexGrid {
 		return null;*/
 	}
 	
+	public void fillRing(int rad, HexNode[] nodes) {
+		
+	}
+	
 	public HexNode[] ring(int rad) {
+		if(rad == 0) {
+			return new HexNode[]{node(0,0)};
+		}
+		
 		HexNode[] results = new HexNode[6*rad];
 		
 		HexNode h = node(rad,0);
@@ -48,6 +56,8 @@ public class HexGrid {
 				h = h.adjacentNodes()[i];
 			}
 		}
+		
+		return results;
 	}
 	
 	public int nodesUpToShell(int shell) {
