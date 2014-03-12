@@ -19,6 +19,10 @@ public class HexNode {
 		grid = grd;
 	}
 	
+	public String toString() {
+		return "HexNode: q: "+q+" r: "+r;
+	}
+	
 	//each shell has 6 more except 1st
 	
 	public HexNode[] adjacentNodes() {
@@ -45,8 +49,11 @@ public class HexNode {
 //		int y = (int) (50 * (r - Math.sqrt(3)*q))+300;
 		
 
-		int x = (int) (50 * Math.sqrt(3) * (q+r/2))+300;
-		int y = (int) (50 * 3/2 * (q))+300;
+		
+		int x = (int) (50 * Math.sqrt(3) * (q+r/2.0))+300;
+		int y = (int) (50 * 3/2 * (r))+300;
+
+//		System.out.println("q: "+q+" r: "+r+" x: "+x+" y: "+y);
 		
 		g.fillOval(x-25,y-25,50,50);
 	}

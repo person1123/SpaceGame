@@ -7,7 +7,7 @@ public class HexGrid {
 	
 	public HexGrid(int sh) {
 		shells = sh;
-		nodes = new HexNode[2*(shells-1)][2*(shells-1)];
+		nodes = new HexNode[2*(shells-1)+1][2*(shells-1)+1];
 		
 //		System.out.println(nodesUpToShell(shells));
 	}
@@ -16,23 +16,7 @@ public class HexGrid {
 		if(q+shells-1<0 || q+shells-1>nodes.length
 				|| r+shells-1<0 || r+shells-1>nodes[0].length)
 			return null;
-		System.out.println("q: "+q+" r: "+r);
 		return nodes[q+shells-1][r+shells-1];
-		/*//mod circ so it wraps wheee
-		
-		int loc = nodesUpToShell(shell);
-		
-		System.out.println("loc: "+loc);
-		
-		loc+=circ % nodesInShell(shell);
-		
-		if(circ % nodesInShell(shell)<0) {
-			loc+=nodesInShell(shell);
-		}
-		
-		if(loc<nodes.length)
-			return nodes[loc];
-		return null;*/
 	}
 	
 	public void fillRing(int rad, HexNode[] nodes) {
@@ -46,14 +30,22 @@ public class HexGrid {
 		
 		HexNode[] results = new HexNode[6*rad];
 		
-		HexNode h = node(rad,0);
+		HexNode h = node(-rad,rad);
 		
 		int ct = 0;
 		
 		for(int i=0;i<6;i++) {
 			for(int j=0;j<rad;j++) {
 				results[ct] = h;
+//				System.out.println(h);
+//				HexNode[] adj = h.adjacentNodes();
+//				for(int k=0;k<6;k++) {
+//					System.out.print(adj[k]+", ");
+//				}
+//				System.out.println();
 				h = h.adjacentNodes()[i];
+				
+				ct++;
 			}
 		}
 		
